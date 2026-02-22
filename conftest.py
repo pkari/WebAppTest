@@ -21,6 +21,6 @@ def driver():
 
 def pytest_configure(config):
     logging.basicConfig(
-        level=logging.INFO,  # Or DEBUG
+        level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(name)s - %(message)s'
     )
