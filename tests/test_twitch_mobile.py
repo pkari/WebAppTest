@@ -1,9 +1,17 @@
+import pytest
+
 from pages.twitch_page import TwitchPage
+from tests.base_test import BaseTest
 
 
-class TestTwitch:
+class TestTwitch(BaseTest):
 
+    @pytest.mark.jira('JIRA-1234')
+    @pytest.mark.testrail('TR-5678')
     def test_twitch_mobile(self, driver, request):
+        # Optionally log or use the metadata
+        self.log_test_metadata(request)
+
         twitch_page = TwitchPage(driver)
         twitch_page.load()
         driver.fullscreen_window()
